@@ -1,0 +1,337 @@
+[
+    {
+        "id": "fbc8e54e.507558",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cb0c98e1.c07568",
+        "type": "trigger",
+        "z": "fbc8e54e.507558",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "100",
+        "extend": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "name": "Negative",
+        "x": 840,
+        "y": 240,
+        "wires": [
+            [
+                "e53b4cce.249c2"
+            ]
+        ]
+    },
+    {
+        "id": "e53b4cce.249c2",
+        "type": "rpi-gpio out",
+        "z": "fbc8e54e.507558",
+        "name": "",
+        "pin": "19",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 1080,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "274bc7f5.281b58",
+        "type": "rpi-gpio out",
+        "z": "fbc8e54e.507558",
+        "name": "",
+        "pin": "33",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 1075,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "a72fe855.fdda98",
+        "type": "inject",
+        "z": "fbc8e54e.507558",
+        "name": "ON",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 190,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6197b510.387c9c",
+        "type": "rpi-gpio out",
+        "z": "fbc8e54e.507558",
+        "name": "",
+        "pin": "29",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 1075,
+        "y": 335,
+        "wires": []
+    },
+    {
+        "id": "5141a8ff.c51948",
+        "type": "twitter in",
+        "z": "fbc8e54e.507558",
+        "twitter": "",
+        "tags": "#Iran,#Trump",
+        "user": "false",
+        "name": "",
+        "topic": "tweets",
+        "inputs": 0,
+        "x": 170,
+        "y": 135,
+        "wires": [
+            [
+                "4342c989.965538"
+            ]
+        ]
+    },
+    {
+        "id": "4342c989.965538",
+        "type": "sentiment",
+        "z": "fbc8e54e.507558",
+        "name": "",
+        "property": "payload",
+        "x": 345,
+        "y": 255,
+        "wires": [
+            [
+                "e3ab3ddd.da703"
+            ]
+        ]
+    },
+    {
+        "id": "e3ab3ddd.da703",
+        "type": "switch",
+        "z": "fbc8e54e.507558",
+        "name": "",
+        "property": "sentiment.score",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "-5",
+                "vt": "num",
+                "v2": "-3",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "-3.01",
+                "vt": "num",
+                "v2": "0",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "0.01",
+                "vt": "num",
+                "v2": "3",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "3.01",
+                "vt": "num",
+                "v2": "5",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 575,
+        "y": 300,
+        "wires": [
+            [
+                "cb0c98e1.c07568",
+                "a17ada96.39a968"
+            ],
+            [
+                "eccde992.4f9b18",
+                "a17ada96.39a968"
+            ],
+            [
+                "a17ada96.39a968",
+                "705fb14a.3e49e"
+            ],
+            [
+                "bdf8d21d.f5b8a"
+            ]
+        ]
+    },
+    {
+        "id": "b9bfa6ae.2681f8",
+        "type": "inject",
+        "z": "fbc8e54e.507558",
+        "name": "OFF",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 190,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eccde992.4f9b18",
+        "type": "trigger",
+        "z": "fbc8e54e.507558",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "3",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "Neutral",
+        "x": 840,
+        "y": 280,
+        "wires": [
+            [
+                "274bc7f5.281b58"
+            ]
+        ]
+    },
+    {
+        "id": "705fb14a.3e49e",
+        "type": "trigger",
+        "z": "fbc8e54e.507558",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "250",
+        "extend": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "name": "Positive",
+        "x": 840,
+        "y": 320,
+        "wires": [
+            [
+                "6197b510.387c9c"
+            ]
+        ]
+    },
+    {
+        "id": "f53f00f.9195a",
+        "type": "ledborg",
+        "z": "fbc8e54e.507558",
+        "name": "",
+        "x": 210,
+        "y": 3765,
+        "wires": []
+    },
+    {
+        "id": "a17ada96.39a968",
+        "type": "batch",
+        "z": "fbc8e54e.507558",
+        "name": "",
+        "mode": "concat",
+        "count": 10,
+        "overlap": 0,
+        "interval": "5",
+        "allowEmptySequence": false,
+        "topics": [
+            {
+                "topic": ""
+            }
+        ],
+        "x": 690,
+        "y": 540,
+        "wires": [
+            [
+                "7fcd7b97.9d3c14"
+            ]
+        ]
+    },
+    {
+        "id": "bdf8d21d.f5b8a",
+        "type": "trigger",
+        "z": "fbc8e54e.507558",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "250",
+        "extend": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "name": "Strong Positive",
+        "x": 820,
+        "y": 360,
+        "wires": [
+            [
+                "ea276b5b.27ecd8"
+            ]
+        ]
+    },
+    {
+        "id": "ea276b5b.27ecd8",
+        "type": "rpi-gpio out",
+        "z": "fbc8e54e.507558",
+        "name": "",
+        "pin": "26",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 1075,
+        "y": 410,
+        "wires": []
+    },
+    {
+        "id": "7fcd7b97.9d3c14",
+        "type": "debug",
+        "z": "fbc8e54e.507558",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1060,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "ca427dd4.c854f",
+        "type": "comment",
+        "z": "fbc8e54e.507558",
+        "name": "ON/OFF Test Nodes",
+        "info": "",
+        "x": 170,
+        "y": 380,
+        "wires": []
+    }
+]
