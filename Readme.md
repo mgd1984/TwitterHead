@@ -7,6 +7,6 @@
 4. Connect the Trigger Nodes to Raspberry Pi GPIO Pinout Nodes to fire the 'neurons' (LEDs) in the TwitterHead.
 5. Send Msg.payload to Debug Node to diagnose any errors.   
 
-![TwitterHead Node Red](https://lh3.googleusercontent.com/yZdqDQpK2iLAxqz9po7Cwptcl_BYAi3PZai7UJe1eyyRIbr2BMQw6oQQ09DFSTXjOjRS9OSfFqMZbjcO2M_F=w1440-h717-rw)
+![TwitterHead Node Red](https://storage.googleapis.com/oa-video-test-bucket/Screen%20Shot%202018-05-09%20at%202.48.58%20PM.jpg)
 
-![TwitterHead](https://lh5.googleusercontent.com/8j3UisTcgjk0T1K515lADWHs99bnxBzH7mSgxJ1U1PXCoXCg1KWhz0y6akHo8wszVvAXoo7WPZSumkk4AFic=w1440-h717-rw)
+![TwitterHead](https://storage.googleapis.com/oa-video-test-bucket/IMG_38B31954FCE3-1.jpeg)
