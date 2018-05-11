@@ -26,7 +26,7 @@ Having worked with in incubators and with tech startups for many years, I came t
 ![TwitterHead Node Red](https://storage.googleapis.com/oa-video-test-bucket/Screen%20Shot%202018-05-09%20at%202.48.58%20PM.jpg)
 
 ![TwitterHead](https://storage.googleapis.com/oa-video-test-bucket/IMG_38B31954FCE3-1.jpeg)
-![TwitterHead Electronics](https://storage.googleapis.com/oa-video-test-bucket/IMG_1827.PNG)
+![TwitterHead Electronics](https://storage.googleapis.com/oa-video-test-bucket/TwitterHead%20Electronics.jpg)
 
 #### Testing the Setup 
 
