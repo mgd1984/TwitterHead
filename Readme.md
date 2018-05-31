@@ -45,7 +45,7 @@ Having worked with in incubators and with tech startups for many years, I came t
 
 #### Testing the Setup 
 
-Below is a video of the prototype in action. The node-red server is running on a Raspberry Pi running Raspbian (Stretch) on a 32GB micro-SD card. The debug node is configured to send the message stream to a console output, which I access through SSH on an iPad with a terminal emulator called [Terminus](https://www.termius.com). The node-red flow listens for tweets (#Westworld,#AI,#MachineLearning) and flashes red, white or multi-colour depending on the sentiment value of the tweet. More information on the nodes used in this flow can be found [here](https://www.npmjs.com/package/sentiment)
+Below is a video of an early prototype in action. The Node-RED server is running on a Raspberry Pi running Raspbian (Stretch) on a 32GB micro-SD card. The debug node is configured to send the message stream to a console output, which I access through SSH on an iPad with a terminal emulator called [Terminus](https://www.termius.com). The Node-RED flow listens for tweets such as (#Westworld,#AI,#MachineLearning) and flashes red, white or multi-colour depending on the sentiment value of the tweet. Not only can the node be configured for #hashtags, it can also be used for @users and other tags as well. More information on the nodes used in this flow can be found [here](https://www.npmjs.com/package/sentiment) & [here] (https://www.npmjs.com/package/node-red-node-twitter)
 
 [![TwitterHead](https://storage.googleapis.com/oa-video-test-bucket/Screen%20Shot%202018-05-09%20at%2011.30.25%20PM.jpg)](https://youtu.be/HNA7sXDd9Sg "TwitterHead")
 
